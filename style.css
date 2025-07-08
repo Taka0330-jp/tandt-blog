@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    padding: 2rem 3rem;
+    color: #ffffff;
+    background-color: rgb(14, 93, 17);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style-type: none;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+#my-button {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    #header-top {
+        display: flex;
+        gap: 9rem;
+    }
+
+    #my-button{
+        display: block;
+        color: #fff;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;        
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    nav.show ul{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+}
