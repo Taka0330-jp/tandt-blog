@@ -51,13 +51,13 @@
       </section>
 
       <section id="intro">
-        <div class="real-recommendation">
+        <div class="real-recommendation animated">
           <div class="intro-text-container">
             <h1>What I Really Buy at T&T</h1>
             <p>
               I’ve worked at T&T for years, and I always get asked, “What’s good
               here?” </br>This blog is just my personal space to share the items I
-              actually use and love. Not official — just real.
+              actually use and love. </br> Not official — just real.
             </p>
           </div>
           <img
@@ -67,12 +67,12 @@
           />
         </div>
 
-        <div class="seasonal-picks">
+        <div class="seasonal-picks animated">
           <div class="intro-text-container">
             <h1>Real Staff Picks — Even the Short-Lived Ones</h1>
             <p>
               Not just what I use all year, but also what I stock up on while
-              they last. These limited-time treats are too good not to mention.
+              they last. </br>These limited-time treats are too good not to mention.
             </p>
           </div>
           <img
@@ -86,20 +86,76 @@
       <section id="latest-blogs">
         <h1>FRESH CONTENT</h1>
         <div id="card-container">
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
+          <div class="card">
+            <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart">
+            <div class="card-content">
+              <h2>REVIEW: T&T Frozen Egg Tart</h2>
+              <p>July 5, 2025</p>
+              <a href="blog-post.html" class="btn">Read</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart">
+            <div class="card-content">
+              <h2>REVIEW: T&T Frozen Egg Tart</h2>
+              <p>July 5, 2025</p>
+              <a href="blog-post.html" class="btn">Read</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart">
+            <div class="card-content">
+              <h2>REVIEW: T&T Frozen Egg Tart</h2>
+              <p>July 5, 2025</p>
+              <a href="blog-post.html" class="btn">Read</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart">
+            <div class="card-content">
+              <h2>REVIEW: T&T Frozen Egg Tart</h2>
+              <p>July 5, 2025</p>
+              <a href="blog-post.html" class="btn">Read</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart">
+            <div class="card-content">
+              <h2>REVIEW: T&T Frozen Egg Tart</h2>
+              <p>July 5, 2025</p>
+              <a href="blog-post.html" class="btn">Read</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart">
+            <div class="card-content">
+              <h2>REVIEW: T&T Frozen Egg Tart</h2>
+              <p>July 5, 2025</p>
+              <a href="blog-post.html" class="btn">Read</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
     <footer>&copy;Takanari Kondo 2025</footer>
 
     <script>
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.target.classList.contains('real-recommendation')) {
+        entry.target.classList.add("fadeInLeft");
+    } else if (entry.isIntersecting && entry.target.classList.contains('seasonal-picks')) {
+        entry.target.classList.add("fadeInRight");
+    }
+        })
+      }); 
+
       const button = document.getElementById("nav-button");
       const nav = document.getElementById("main-nav");
+
+      document.querySelectorAll(".animated").forEach(el => {
+        observer.observe(el);
+      });
 
       button.addEventListener("click", () => {
         nav.classList.toggle("show");
