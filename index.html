@@ -13,12 +13,12 @@
   <body>
     <header>
       <div id="header-top">
-        <button id="my-button">
+        <button id="nav-button">
           <i class="fa-solid fa-bars"></i>
         </button>
         <h1>T&T Picks</h1>
       </div>
-      <nav id="my-nav">
+      <nav id="main-nav">
         <ul>
           <li>
             <a href="#">Home</a>
@@ -35,37 +35,57 @@
 
     <main>
       <section id="hero-section">
-        <h1>
-          Here are some of my favorite finds from T&T — recommended by real
-          staff! Tasty, useful, and totally worth trying.
-        </h1>
-        <img
-          src="/images/grocery.jpeg"
-          alt="A picture of T&T products"
-          width="100%"
-        />
+        <div class="container">
+          <img
+            src="/images/TanT-paperbag-mockup.png"
+            alt="A picture of T&T products"
+          />
+          <div class="hero-text">
+            <h1>Here are some of my favorite finds from T&T !</h1>
+            <p>
+              Recommended by real staff! Tasty, useful, and totally worth
+              trying.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section id="intoro">
-        <h1>What I Really Buy at T&T</h1>
-        <p>
-          I’ve worked at T&T for years, and I always get asked, “What’s good
-          here?” This blog is just my personal space to share the items I
-          actually use and love. Not official — just real.
-        </p>
-        <img src="" alt="A picture of my uniform" />
+      <section id="intro">
+        <div class="real-recommendation">
+          <div class="intro-text-container">
+            <h1>What I Really Buy at T&T</h1>
+            <p>
+              I’ve worked at T&T for years, and I always get asked, “What’s good
+              here?” </br>This blog is just my personal space to share the items I
+              actually use and love. Not official — just real.
+            </p>
+          </div>
+          <img
+            src="/images/uniform.jpg"
+            alt="A picture of my uniform"
+            class="intro-image"
+          />
+        </div>
 
-        <h1>Real Staff Picks — Even the Short-Lived Ones</h1>
-        <p>
-          Not just what I use all year, but also what I stock up on while they
-          last. These limited-time treats are too good not to mention.
-        </p>
-        <img src="" alt="A picture of something T&T product" />
+        <div class="seasonal-picks">
+          <div class="intro-text-container">
+            <h1>Real Staff Picks — Even the Short-Lived Ones</h1>
+            <p>
+              Not just what I use all year, but also what I stock up on while
+              they last. These limited-time treats are too good not to mention.
+            </p>
+          </div>
+          <img
+            src="/images/TanT-products.png"
+            alt="A picture of something T&T product"
+            class="intro-image"
+          />
+        </div>
       </section>
 
-      <section id="latest blogs">
+      <section id="latest-blogs">
         <h1>FRESH CONTENT</h1>
-        <div id="card container">
+        <div id="card-container">
           <div class="card"></div>
           <div class="card"></div>
           <div class="card"></div>
@@ -78,8 +98,8 @@
     <footer>&copy;Takanari Kondo 2025</footer>
 
     <script>
-      const button = document.getElementById("my-button");
-      const nav = document.getElementById("my-nav");
+      const button = document.getElementById("nav-button");
+      const nav = document.getElementById("main-nav");
 
       button.addEventListener("click", () => {
         nav.classList.toggle("show");
