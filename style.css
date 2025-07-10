@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* navigation */
 header {
   position: sticky;
@@ -36,31 +37,6 @@ a {
   display: none;
 }
 
-@media (max-width: 700px) {
-  #header-top {
-    display: flex;
-    gap: 9rem;
-  }
-
-  #nav-button {
-    display: block;
-    color: #fff;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  nav.show ul {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-}
 /* hero-section */
 .container {
   background-color: antiquewhite;
@@ -83,69 +59,54 @@ a {
   font-size: 28px;
 }
 
-@media (max-width: 700px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
 
-  .container img {
-    width: 50%;
-    min-width: 450px;
-  }
-
-  .hero-text {
-    text-align: center;
-    font-size: 18px;
-  }
-}
-
-#intro {
+.intro-section {
   background-color: rgb(245, 255, 225);
   padding: 50px;
 }
 
 /* intro section 1 */
-.real-recommendation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1200px;
+    gap: 1rem;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 5rem;
 }
 
-.intro-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.grid .text {
+    grid-column: 2 / span 5;
 }
-.intro-image {
+
+
+.grid .intro-image {
+  grid-column: 8 / span 5;
   width: 300px;
   height: 300px;
   border-radius: 50%;
 }
 
+.grid.reverse .intro-image {
+    grid-column: 2 / span 5;
+  }
+  .grid.reverse .text {
+    grid-column: 7 / span 5;
+  }
+
 /* intro section 2 */
 
-.seasonal-picks {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
 
 /* latest blog card section */
 
-#latest-blogs h1 {
+.latest-blogs h1 {
   text-align: center;
   padding: 4rem;
   font-size: 32px;
 }
 
-#card-container {
+.card-container {
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
@@ -200,8 +161,56 @@ footer {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 1rem 2rem;
 }
+
+@media (max-width: 768px) {
+
+    /* navigation */
+    .header-top {
+        display: flex;
+        gap: 9rem;
+      }
+    
+      #nav-button {
+        display: block;
+        color: #fff;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    
+      nav ul {
+        display: none;
+      }
+    
+      nav.show ul {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* hero-section */
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+    
+      .container img {
+        width: 50%;
+        min-width: 450px;
+      }
+    
+      .hero-text {
+        text-align: center;
+        font-size: 18px;
+      }
+}
+
+
 /* animation */
-@keyframes fadeInLeft {
+/* @keyframes fadeInLeft {
   0% {
     opacity: 0;
     transform: translateX(-400px);
@@ -229,4 +238,4 @@ footer {
 
 .fadeInRight {
   animation: fadeInRight 1.5s ease-out forwards;
-}
+} */
