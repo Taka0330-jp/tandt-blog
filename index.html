@@ -4,20 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css">
   <script src="https://kit.fontawesome.com/98959d25cf.js" crossorigin="anonymous"></script>
   <title>T&T Picks</title>
 </head>
 
 <body>
-  <header>
-    <div class="header-top">
+  <header class="site-header">
+    <div class="container">
+      <div class="flex">
       <button id="nav-button">
         <i class="fa-solid fa-bars"></i>
       </button>
-      <h1>T&T Picks</h1>
+      <div class="site-header__logo">
+      <h1><a href="#">T&T Picks</a></h1>
     </div>
-    <nav id="main-nav">
+
+    <nav id="main-nav" aria-label="Main Navigation">
       <ul>
         <li>
           <a href="#">Home</a>
@@ -30,11 +33,14 @@
         </li>
       </ul>
     </nav>
+  </div>
+  </div>
   </header>
 
   <main>
     <section>
       <div class="container">
+        <div class="grid">
         <img src="/images/TanT-paperbag-mockup.png" alt="A picture of T&T products" />
         <div class="hero-text">
           <h1>Here are some of my favorite finds from T&T !</h1>
@@ -44,9 +50,11 @@
           </p>
         </div>
       </div>
+      </div>
     </section>
 
     <section class="intro-section">
+      <div class="container">
       <div class="grid animated">
         <div class="text">
           <h1>What I Really Buy at T&T</h1>
@@ -58,8 +66,9 @@
         </div>
         <img src="/images/uniform.jpg" alt="A picture of my uniform" class="intro-image" />
       </div>
-      </div>
-
+    </div>
+      
+      <div class="container">
       <div class="grid reverse animated">
         <img src="/images/TanT-products.png" alt="A picture of something T&T product" class="intro-image" />
         <div class="text">
@@ -76,6 +85,8 @@
 
     <!-- Blog previews -->
     <section class="latest-blogs">
+      <div class="container">
+        <div class="grid">
       <h1>FRESH CONTENT</h1>
       <div class="card-container">
         <div class="card">
@@ -127,9 +138,17 @@
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </section>
   </main>
-  <footer>&copy;Takanari Kondo 2025</footer>
+  <footer>
+    <div class="container">
+      <div class="flex">
+      &copy;Takanari Kondo 2025
+    </div>
+    </div>
+    </footer>
 
   <script>
     //   const observer = new IntersectionObserver(entries => {
