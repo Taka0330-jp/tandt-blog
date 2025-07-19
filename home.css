@@ -4,10 +4,11 @@
     --green:#136C4B;
     --blush-beige: #F9E8D3;
     --white:#fff;
-    --card-color:#f0f0f0;
+    --blog-preview_bg:#fff;
+    --card-color:#d2ebd3;
     --font-base:"Poppins", sans-serif;
     --font-heading:"Outfit", sans-serif;
-    --font-size-base: clamp(1rem, 1.25vw, 1.8rem);
+    --font-size-base:1rem;
     --drop-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -21,7 +22,7 @@
 
 body {
     font-family: var(--font-base);
-    font-size: var(--font-size-base);
+    font-size:var(--font-size-base);
 }
 
 img {
@@ -41,7 +42,7 @@ section{
 .grid{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
     justify-items: center;
     align-items: center;
 }
@@ -53,20 +54,21 @@ section{
 
 /* Typography */
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.5;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
   h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    padding: 1rem 0rem;
   }
   
   h2 {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    padding: 2rem 0rem;
   }
+
+  h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    padding: 0rem 1rem 1rem;
+  }
+
 
   /* Header */
 .site-header{
@@ -100,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--white);
 }
 
-/* hamburger-menu styling */
+/* Hamburger-menu styling */
 #nav-button{
     background-color: transparent;
     border: none;
@@ -222,18 +224,59 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Blog previews */
 
-.blog-previews h1{
+.blog-previews{
+    padding: 5rem;
+    background-color: var(--blog-preview_bg) ;
+}
+.blog-previews h2{
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .card {
     background-color: var(--card-color);
-    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--drop-shadow);
 }
 
+.card p {
+    padding: 0 1rem;
+}
+
+.thumbnail{
+    width: auto;
+    height: 200px;
+    object-fit: cover;
+    background-size: cover;
+    margin: 1rem;
+}
+
+.card-content{
+    padding: 1rem;
+}
+
+.btn-date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.issue-date {
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+.btn {
+    background-color: black;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
 
 
 @media screen and (min-width:768px){
@@ -320,12 +363,9 @@ h1, h2, h3, h4, h5, h6 {
     .blog-previews .grid {
         display: grid;
         grid-template-columns: repeat(2 , 1fr);
-        padding: 2rem;
+        gap: 2rem;
     }
 
-    .card{
-        width: auto;
-    }
 }
 
 @media screen and (min-width:1200px) {
@@ -335,10 +375,10 @@ h1, h2, h3, h4, h5, h6 {
     .blog-previews .grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
     }
 
     .card {
-        max-width: 300px;
         grid-column: span 4;
     }
 }
