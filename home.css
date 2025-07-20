@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --green:#136C4B;
+    --green: #136C4B;
     --blush-beige: #F9E8D3;
-    --white:#fff;
-    --blog-preview_bg:#fff;
-    --card-color:#d2ebd3;
-    --font-base:"Poppins", sans-serif;
-    --font-heading:"Outfit", sans-serif;
-    --font-size-base:1rem;
+    --white: #fff;
+    --blog-preview_bg: #fff;
+    --card-color: #d2ebd3;
+    --font-base: "Poppins", sans-serif;
+    --font-heading: "Outfit", sans-serif;
+    --font-size-base: 1rem;
     --drop-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,7 +22,7 @@
 
 body {
     font-family: var(--font-base);
-    font-size:var(--font-size-base);
+    font-size: var(--font-size-base);
 }
 
 img {
@@ -35,11 +35,11 @@ img {
     padding-inline: 1rem;
 }
 
-section{
+section {
     margin: 0;
 }
 
-.grid{
+.grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -47,31 +47,31 @@ section{
     align-items: center;
 }
 
-.flex{
+.flex {
     display: flex;
     gap: 1rem;
 }
 
 /* Typography */
 
-  h1 {
+h1 {
     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     padding: 1rem 0rem;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     padding: 2rem 0rem;
-  }
+}
 
-  h3 {
+h3 {
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     padding: 0rem 1rem 1rem;
-  }
+}
 
 
-  /* Header */
-.site-header{
+/* Header */
+.site-header {
     padding: 2rem 1rem;
     background-color: var(--green);
     color: var(--white);
@@ -82,15 +82,15 @@ section{
     width: 100%;
 }
 
-.site-header .flex{
+.site-header .flex {
     align-items: center;
     justify-content: space-between;
 }
 
-.site-header__logo a{
-   font-family: var(--font-heading);
-   font-size: 2rem;
-   font-weight: 700;
+.site-header__logo a {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .site-header ul {
@@ -103,7 +103,7 @@ section{
 }
 
 /* Hamburger-menu styling */
-#nav-button{
+#nav-button {
     background-color: transparent;
     border: none;
     font-size: 1.5rem;
@@ -111,11 +111,11 @@ section{
     cursor: pointer;
 }
 
-#main-nav{
+#main-nav {
     display: none;
 }
 
-#main-nav.show{
+#main-nav.show {
     display: flex;
     position: absolute;
     top: 100%;
@@ -124,13 +124,13 @@ section{
     animation: hamburger-slide 0.2s ease-out forwards;
 }
 
-#main-nav.show a{
+#main-nav.show a {
     display: block;
     line-height: 2.5rem;
     padding: 1rem 2rem;
 }
 
-#main-nav.show a:hover{
+#main-nav.show a:hover {
     background-color: #b7b7b7;
     color: black;
 }
@@ -162,25 +162,25 @@ section{
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 0;
-  }
-  
-  .hero-section .grid {
-    padding: 3rem;
-  }
+}
 
-  .hero-section__text,
-  .hero-section__img {
+.hero-section .grid {
+    padding: 3rem;
+}
+
+.hero-section__text,
+.hero-section__img {
     grid-column: auto;
-  }
+}
 
 /* Intro-section */
-.intro-section{
+.intro-section {
     padding: 2rem;
     background-color: var(--blush-beige);
     padding: 3rem;
 }
 
-.intro-section .container .flex{
+.intro-section .container .flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -196,6 +196,7 @@ section{
     border-radius: 50%;
     max-width: 200px;
 }
+
 .intro-1__animation {
     animation: fade-in-left 1.5s ease-out forwards;
 }
@@ -206,12 +207,12 @@ section{
 
 @keyframes fade-in-left {
 
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(-400px);
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateX(0px);
     }
@@ -219,12 +220,12 @@ section{
 
 @keyframes fade-in-right {
 
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(400px);
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateX(0px);
     }
@@ -232,11 +233,12 @@ section{
 
 /* Blog previews */
 
-.blog-previews{
+.blog-previews {
     padding: 5rem;
-    background-color: var(--blog-preview_bg) ;
+    background-color: var(--blog-preview_bg);
 }
-.blog-previews h2{
+
+.blog-previews h2 {
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -255,7 +257,7 @@ section{
     padding: 0 1rem;
 }
 
-.thumbnail{
+.thumbnail {
     width: auto;
     height: 200px;
     object-fit: cover;
@@ -263,11 +265,11 @@ section{
     margin: 1rem;
 }
 
-.card-content{
+.card-content {
     padding: 1rem;
 }
 
-.btn-date{
+.btn-date {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -278,6 +280,7 @@ section{
     font-size: 0.8rem;
     font-weight: 200;
 }
+
 .btn {
     background-color: black;
     color: var(--white);
@@ -287,41 +290,41 @@ section{
 }
 
 
-@media screen and (min-width:768px){
+@media screen and (min-width:768px) {
 
     /* base */
-    
+
     .grid {
         grid-template-columns: repeat(12, 1fr);
         gap: 2rem;
     }
 
     /* Navigation-bar */
-    
+
     #main-nav.show {
         all: unset;
         display: block;
-      }
+    }
 
-    #main-nav{
+    #main-nav {
         display: block;
         margin-top: 2rem;
     }
 
-    #main-nav ul{
+    #main-nav ul {
         display: flex;
         flex-direction: row;
         gap: 2rem;
 
     }
 
-    #nav-button{
+    #nav-button {
         display: none;
     }
 
     /* Hero-section */
 
-    .hero-section{
+    .hero-section {
         width: 100vw;
         height: 100vh;
     }
@@ -331,18 +334,18 @@ section{
         height: 100vh;
 
     }
- 
+
     .hero-section__img {
         grid-column: 7 /span 6;
     }
-    
-    .hero-section__text{
+
+    .hero-section__text {
         grid-column: 1/ span 5;
     }
-    
+
     /* Intro-section */
 
-    .intro-section{
+    .intro-section {
         padding: 3rem;
         display: flex;
         flex-wrap: nowrap;
@@ -350,12 +353,12 @@ section{
         gap: 5rem;
     }
 
-    
+
     #intro-2 .flex {
         flex-direction: row-reverse;
     }
-    
-    .intro-section__text{
+
+    .intro-section__text {
         max-width: 500px;
         padding: 1rem 2rem;
     }
@@ -365,13 +368,13 @@ section{
         border-radius: 50%;
         max-width: 250px;
     }
-    
+
 
     /* Blog previews */
 
     .blog-previews .grid {
         display: grid;
-        grid-template-columns: repeat(2 , 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 
