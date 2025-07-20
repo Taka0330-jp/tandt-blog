@@ -72,7 +72,7 @@ h3 {
 
 /* Header */
 .site-header {
-    padding: 2rem 1rem;
+    padding: 1rem;
     background-color: var(--green);
     color: var(--white);
     position: sticky;
@@ -172,6 +172,22 @@ h3 {
 .hero-section__img {
     grid-column: auto;
 }
+
+/* .hero-section__text {
+    animation: fade_in_up 0.5s ease-out;
+}
+
+@keyframes fade_in_up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+} */
 
 /* Intro-section */
 .intro-section {
@@ -316,6 +332,33 @@ h3 {
         flex-direction: row;
         gap: 2rem;
 
+    }
+
+    .nav__link {
+        position: relative;
+        display: inline-block;
+    }
+
+    .nav__link:hover {
+        color: #000000;
+        position: relative;
+    }
+
+    .nav__link::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: orange;
+        left: 0;
+        bottom: -1rem;
+        pointer-events: none;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .nav__link:hover::before {
+        transform: scaleX(1);
     }
 
     #nav-button {
