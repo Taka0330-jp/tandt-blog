@@ -45,7 +45,7 @@
     <section class="hero-section">
       <div class="container">
         <div class="grid">
-          <div class="hero-section__text">
+          <div class="hero-section__text fade-in-up">
             <h1>Here are some of my favorite finds from T&T!</h1>
             <p>Recommended by real staff! Tasty, useful, and totally worth trying.</p>
           </div>
@@ -64,7 +64,7 @@
       <div class="container" id="intro-1">
         <div class="flex">
 
-          <div class="intro-section__text">
+          <div class="intro-section__text fade-in-left">
             <h2>What I Really Buy at T&T</h2>
             <p>
               I’ve worked at T&T for years, and I always get asked, “What’s good
@@ -82,7 +82,7 @@
       <!-- Intro-2 -->
       <div class="container" id="intro-2">
         <div class="flex">
-          <div class="intro-section__text">
+          <div class="intro-section__text fade-in-right">
             <h2>Real Staff Picks — Even the Short-Lived Ones</h2>
             <p>
               Not just what I use all year, but also what I stock up on while
@@ -101,7 +101,7 @@
       <div class="container">
         <h2>FRESH CONTENT</h2>
         <div class="card-container grid">
-          <div class="card">
+          <div class="card fade-in-up">
             <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart" class="thumbnail">
             <div class="card-content">
               <h3>REVIEW: T&T Frozen Egg Tart</h3>
@@ -112,7 +112,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card fade-in-up">
             <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart" class="thumbnail">
             <div class="card-content">
               <h3>REVIEW: T&T Frozen Egg Tart</h3>
@@ -123,7 +123,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card fade-in-up">
             <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart" class="thumbnail">
             <div class="card-content">
               <h3>REVIEW: T&T Frozen Egg Tart</h3>
@@ -134,7 +134,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card fade-in-up">
             <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart" class="thumbnail">
             <div class="card-content">
               <h3>REVIEW: T&T Frozen Egg Tart</h3>
@@ -145,7 +145,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card fade-in-up">
             <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart" class="thumbnail">
             <div class="card-content">
               <h3>REVIEW: T&T Frozen Egg Tart</h3>
@@ -156,7 +156,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card fade-in-up">
             <img src="/images/egg-tart.avif" alt="a picture of TandT egg tart" class="thumbnail">
             <div class="card-content">
               <h3>REVIEW: T&T Frozen Egg Tart</h3>
@@ -183,22 +183,17 @@
     const button = document.getElementById("nav-button");
     const nav = document.getElementById("main-nav");
 
-    const intro_1 = document.getElementById("intro-1");
-    const intro_2 = document.getElementById("intro-2");
+    const animation = document.querySelectorAll(".fade-in-up, .fade-in-left, .fade-in-right");
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.target === intro_1 && entry.isIntersecting) {
-          entry.target.classList.add("intro-1__animation");
-        }
-        if (entry.target === intro_2 && entry.isIntersecting) {
-          entry.target.classList.add("intro-2__animation")
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
         }
       });
     });
 
-    observer.observe(intro_1);
-    observer.observe(intro_2);
+    animation.forEach((el) => observer.observe(el));
 
     button.addEventListener("click", () => {
       nav.classList.toggle("show");
