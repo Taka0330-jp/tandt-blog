@@ -1,15 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --green: #136C4B;
-    --blush-beige: #F9E8D3;
+    /* Base colors */
+    --primary-green: #136C4B;
+    --accent-orange: #f8a325;
+    --light-beige: #F9E8D3;
+    --light-green: #c8e9c8;
+    --light-gray: #fafafa;
+    --dark-gray: #333;
     --white: #fff;
-    --blog-preview_bg: #fff;
-    --card-color: #d2ebd3;
-    --font-base: "Poppins", sans-serif;
-    --font-heading: "Outfit", sans-serif;
-    --font-size-base: 1rem;
+    --black: #000;
+
+    /* UI element colors */
+    --overlay-bg: rgba(0, 0, 0, 0.6);
+    --hover-bg: #b7b7b7;
     --drop-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+    /* Typography */
+    --font-base: "Poppins", sans-serif;
+    --font-size-base: 1rem;
+
+    /* Section backgrounds */
+    --card-color: var(--light-green);
+    --header-bg: var(--primary-green);
+    --intro-bg: var(--light-beige);
+    --blog-preview-bg: var(--light-gray);
+    --footer-bg: var(--black);
 }
 
 * {
@@ -69,11 +85,15 @@ h3 {
     padding: 0rem 1rem 1rem;
 }
 
+p {
+    color: var(--dark-gray);
+}
 
+/* /////////////////////////////////Mobile screen///////////////////////////////// */
 /* Header */
 .site-header {
     padding: 1rem;
-    background-color: var(--green);
+    background-color: var(--header-bg);
     color: var(--white);
     position: sticky;
     top: 0;
@@ -88,7 +108,6 @@ h3 {
 }
 
 .site-header__logo a {
-    font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
 }
@@ -120,7 +139,7 @@ h3 {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.701);
+    background-color: var(--overlay-bg);
     animation: hamburger-slide 0.2s ease-out forwards;
 }
 
@@ -131,8 +150,8 @@ h3 {
 }
 
 #main-nav.show a:hover {
-    background-color: #b7b7b7;
-    color: black;
+    background-color: var(--hover-bg);
+    color: var(--black);
 }
 
 @keyframes hamburger-slide {
@@ -150,7 +169,7 @@ h3 {
 /* Footer */
 
 .site-footer {
-    background-color: black;
+    background-color: var(--footer-bg);
     color: var(--white);
     padding: 1rem 0;
 }
@@ -175,8 +194,7 @@ h3 {
 
 /* Intro-section */
 .intro-section {
-    padding: 2rem;
-    background-color: var(--blush-beige);
+    background-color: var(--intro-bg);
     padding: 3rem;
 }
 
@@ -260,7 +278,7 @@ h3 {
 
 .blog-previews {
     padding: 5rem;
-    background-color: var(--blog-preview_bg);
+    background-color: var(--blog-preview-bg);
 }
 
 .blog-previews h2 {
@@ -307,13 +325,20 @@ h3 {
 }
 
 .btn {
-    background-color: black;
+    background-color: var(--black);
     color: var(--white);
     text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 10px;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
+.btn:hover {
+    color: var(--black);
+    background-color: var(--accent-orange);
+    transition: 0.3s ease-out;
+}
+
+/* /////////////////////////////////Desktop screen///////////////////////////////// */
 
 @media screen and (min-width:768px) {
 
@@ -349,7 +374,7 @@ h3 {
     }
 
     .nav__link:hover {
-        color: #000000;
+        color: black;
         position: relative;
     }
 
@@ -358,7 +383,7 @@ h3 {
         position: absolute;
         height: 2px;
         width: 100%;
-        background: orange;
+        background: var(--accent-orange);
         left: 0;
         bottom: -1rem;
         pointer-events: none;
